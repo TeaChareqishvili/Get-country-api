@@ -1,1 +1,26 @@
 
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+body, .App{
+    width:100%;
+    height:100vh;
+}
+
+@font-face {
+    font-family: "normal";
+    src: url("../src/Fonts/PlayfairDisplay-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "bold";
+    src: url("../src//Fonts/PlayfairDisplay-Bold.ttf");
+  }
+
+  @font-face {
+    font-family: "italic";
+    src: url("../src/Fonts/PlayfairDisplay-Italic.ttf");
+  }
