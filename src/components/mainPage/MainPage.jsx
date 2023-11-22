@@ -3,14 +3,14 @@ import "./MainPage.scss";
 import { Header } from "../header/Header";
 
 
-const MainPage = ({night, setNight})=>{
+const MainPage = ({night, setNight, ChangeMode})=>{
 
     const data = UseFetchData()
      console.log('niaaa', data)
 
     return(
-        <div className="main-wrapper">
-         <Header night={night} setNight={setNight}/>
+        <div className={night ? "night-mode" : "main-wrapper"}>
+         <Header night={night} setNight={setNight} ChangeMode={ChangeMode}/>
         </div>
     )
 }

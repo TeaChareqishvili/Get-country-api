@@ -1,10 +1,18 @@
-.where-in-world{
-    width:100%;
-    padding:20px;
-    background-color:#ffffff;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+.where-in-world{ 
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:90%;
+    margin: 20px auto;
+
+   
+
+    h2{
+        font-size:1.5rem;
+        font-family:"bold";
+        color:#3c3d3f;
+    }
 
     .mode{
         display: flex;
@@ -12,12 +20,55 @@
         justify-content: flex-end;
         p{
             margin-left:7px;
-            font-size:14px;
+            font-size:1rem;
+            cursor: pointer;
+            font-family: "normal";
+            color:#3c3d3f;
+        }
+        .moon{
+            color:#3c3d3f;
+            width:20px;
+            height:20px;
             cursor: pointer;
         }
     }
 }
 
-.night-mode{
-    background-color: black;
+.night{
+    
+    width:90%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+
+    h2{
+        font-size:1.5rem;
+        font-family:"bold";
+        color:#cbd0d5;
+    }
+
+    .night-color{
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        p{
+            margin-left:7px;
+            font-size:1rem;
+            cursor: pointer;
+            font-family: "normal";
+            color:#cbd0d5;
+
+         
+        }
+        .night-moon{
+            width:20px;
+            height:20px;
+            cursor: pointer;
+            color:#cbd0d5;
+          
+        }
+    }
 }
