@@ -1,12 +1,60 @@
 .region-wrapper-night{
     width:100%;
     background-color: #212e37;
+    padding:30px;
    
+    .button{
+        width:100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+      
+        .btn{
+            color:#8d949c;
+            font-family: "normal";
+            font-size:15px;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 5px 5px 9px rgba(29, 41, 53, 0.1);
+            padding: 5px 10px;
+            background-color: #2b3743;
+            width:100px;
+            cursor: pointer;
+        }
+        .btn:hover{
+           color:#ffffff;
+        }
+    }
 }
 
 
 .region-wrapper-day{
     width:100%;
     background-color: #ffffff;
+    padding:30px;
    
+  
+    .button{
+        width:100%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+      
+        .btn{
+            color:#888a89;
+            font-family: "normal";
+            font-size:15px;
+            border: none;
+            border-radius: 6px;
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 5px 10px;
+            background-color: #ffffff;
+            width:100px;
+            cursor: pointer;
+        }
+
+        .btn:hover{
+           color:#2b3743;
+        }
+    }
 }

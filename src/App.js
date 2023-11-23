@@ -6,10 +6,19 @@ import { RegionDetail } from "./components/regionDetail/RegionDetail";
 
 function App() {
   const [night, setNight] = useState(false);
+  const [region, getRegion] = useState ([])
 
   const ChangeMode = () => {
     setNight(!night);
   };
+
+  const handleGetRegion = (item) => {
+    console.log("Clicked on region:", item);
+     getRegion(item)
+  };
+
+ 
+    console.log(region ," please")
 
   return (
     <div className="App">
@@ -25,10 +34,11 @@ function App() {
                 night={night}
                 setNight={setNight}
                 ChangeMode={ChangeMode}
+                handleGetRegion={handleGetRegion}
               />
             }
           />
-           <Route path="/region/:regionName" element={<RegionDetail night={night} />} />
+           <Route path="/region" element={<RegionDetail night={night} region={region} />} />
         </Routes>
       </div>
     </div>
