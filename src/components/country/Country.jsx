@@ -2,6 +2,8 @@ import "./CountryStyle.scss";
 import { UseFetchData } from "../../hook/UseFetchData";
 import { useState,useEffect } from "react";
 
+import { NavLink } from "react-router-dom";
+
 
 const Country = ({night})=>{
 
@@ -23,13 +25,14 @@ const Country = ({night})=>{
           console.error("Error fetching data:", error);
         }
       };
-  
+     
       fetchData(); 
     }, []);
-  
+   
     return (
       <div className="region-wrapper">
         {newdata.map((item, index) => (
+           <NavLink to={`/region/${item.name.official}`} key={index}>
           <div key={index} className={night? "dark-region" :"light-region"}>  
             <img src={item.flags.png} alt="flag"/>
             <h2 className={night ? "dark" : "light"}>{item.name.official}</h2>
@@ -37,6 +40,7 @@ const Country = ({night})=>{
             <p className={night? "dark-font" : "light-font"}>Region:<span className={night ? "dark-span" : "light-span"}>{item.region}</span></p>
             <p className={night? "dark-font" : "light-font"}>Capital:<span className={night ? "dark-span" : "light-span"}>{item.capital}</span></p>
           </div>
+          </NavLink>
         ))}
       </div>
     );
