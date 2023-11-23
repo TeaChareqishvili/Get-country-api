@@ -1,34 +1,45 @@
 import "./CountryStyle.scss";
 import { UseFetchData } from "../../hook/UseFetchData";
+import { useState,useEffect } from "react";
 
 
 const Country = ()=>{
 
-    const data = UseFetchData()
-
-    console.log("fetch", data);
-
-data.then(data => {
-    if (data && data.length > 0) {
-      // Extract and log the "borders" property for each item in the array
-      data.map((item, index) => (
-        console.log(`Borders for item `, item.flag)
-      ));
-    } else {
-      console.log("No data or empty array");
-    }
-  }).catch(error => {
-    console.error("Error fetching data:", error);
-  });
-
     
+    const [newdata, setNewData] = useState([]);
 
-
-    return(
-        <div>
-        
-        </div>
-    )
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const fetchedData = await UseFetchData();
+          console.log("fetch", fetchedData);
+  
+          if (fetchedData && fetchedData.length > 0) {
+            setNewData(fetchedData);
+          } else {
+            console.log("No data or empty array");
+          }
+        } catch (error) {
+          console.error("Error fetching data:", error);
+        }
+      };
+  
+      fetchData(); 
+    }, []);
+  
+    return (
+      <div className="region-wrapper">
+        {newdata.map((item, index) => (
+          <div key={index} className="region">  
+            <img src={item.flags.png} alt="flag"/>
+            <h2>{item.name.official}</h2>
+            <p>{item.population}</p>
+            <p>{item.region}</p>
+            <p>{item.capital}</p>
+          </div>
+        ))}
+      </div>
+    );
 }
 
 export {Country}
