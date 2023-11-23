@@ -8,7 +8,7 @@ const CountryLayout = ({night}) => {
         <p>search</p>
         <p>filter</p>
       </form>
-     <Country/>
+     <Country night={night}/>
     </div>
   );
 };

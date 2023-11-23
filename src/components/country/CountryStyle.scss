@@ -6,12 +6,115 @@
     flex-wrap: wrap;
     margin:auto;
 
-    .region{
-        max-width:200px;
+    .light-region{
+        height:370px;
+        max-width:300px;
         width:100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin:20px 30px;
+        background-color: #ffffff;
+        padding:30px 20px;
+        cursor: pointer;
+        transition:  ease-in-out 1s;
         img{
             width:100%;
             height:150px;
+            margin-bottom:5px;
+            cursor: pointer;
+        }
+
+        .light{
+            font-size:1rem;
+            color:#5c5c5c;
+            font-family:"bold";
+            margin:5px 0;
+            cursor: pointer;
+
+           
+        }
+
+        .light-font{
+            font-size:15px;
+            margin-bottom:5px;
+            font-family:"normal";
+            color:#5c5c5c;
+            .light-span{
+                font-size:15px;
+                font-family:"italic";
+                color:#5c5c5c;
+                margin-left:5px;
+            }
+        
         }
     }
+    .light-region:hover{
+        border:1px solid #f6f6f6;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        transition:  ease-in-out 1s;
+        scale: (1.1);
+    }
 }
+
+    .region-wrapper{
+        width:90%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin:auto;
+
+    .dark-region{
+        height:370px;
+        max-width:300px;
+        width:100%;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin:20px 30px;
+        background-color: #2b3743;
+        padding:30px 20px;
+        cursor: pointer;
+        transition:  ease-in-out 1s;
+
+        img{
+            width:100%;
+            height:150px;
+            margin-bottom:5px;
+            cursor: pointer;
+        }
+
+        .dark{
+            font-size:1rem;
+            color:#d9dfe5;
+            font-family:"bold";
+            margin:5px 0;
+            cursor: pointer;
+        }
+        .dark-font{
+            font-size:15px;
+            margin-bottom:5px;
+            font-family:"normal";
+            color:#d9dfe5;
+
+            .dark-span{
+                font-size:15px;
+                font-family:"italic";
+                color:#808a93;
+                margin-left:5px;
+            }
+          
+         
+        }
+    }
+    .dark-region:hover{
+        border:1px solid #1d2935;
+        box-shadow: 2px 2px 6px rgba(29, 41, 53, 0.1);
+        transition:  ease-in-out 1s;
+        scale: (1.1);
+    }
+}
+    
