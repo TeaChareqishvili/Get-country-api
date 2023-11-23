@@ -5,6 +5,7 @@ const Header = ({ night,ChangeMode }) => {
  
 
   return (
+   
     <div className={night ? "night" : "where-in-world"}>
       <h2>Where In The World?</h2>
       <div
@@ -15,6 +16,7 @@ const Header = ({ night,ChangeMode }) => {
         <p>{night ? "Light Mode" : "Dark Mode"}</p>
       </div>
     </div>
+ 
   );
 };
 
