@@ -2,7 +2,7 @@ import "./RegionDetailStyle.scss";
 import { NavLink } from "react-router-dom";
 
 
-const RegionDetail = ({ night, region }) => {
+const RegionDetail = ({ night, region,deleteLocalRegion }) => {
   console.log("region-component-saved", region);
 
 
@@ -13,21 +13,11 @@ const RegionDetail = ({ night, region }) => {
     <div className={night ? "region-wrapper-night" : "region-wrapper-day"}>
       <div className="button">
         <NavLink to="/">
-          <button className="btn">Back</button>
+          <button className="btn" onClick={()=>deleteLocalRegion()}>Back</button>
         </NavLink>
       </div>
       <div className="regions">
-        {region && (
-          <>
-            <div className="flags">
-              <img src={region.flag} alt="flags" />
-              <p>{region.area}</p>
-            </div>
-            <div className="region-info">
-            
-            </div>
-          </>
-        )}
+     
       </div>
     </div>
   );

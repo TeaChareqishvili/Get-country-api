@@ -15,12 +15,18 @@ const UseSaveRegion = ()=>{
         setRegion((prevRegion) => [...prevRegion, item]);
       };
 
+      const deleteLocalRegion = () => {
+        localStorage.removeItem('region');
+        setRegion([]);
+       
+      };
+
       useEffect(() => {
         localStorage.setItem('region', JSON.stringify(region));
         
       }, [region]);
 
-      return {handleGetRegion, region}
+      return {handleGetRegion, region,deleteLocalRegion}
 }
 
 export {UseSaveRegion}

@@ -10,7 +10,7 @@ function App() {
   const [night, setNight] = useState(false);
   // const [region, setRegion] = useState ([])
 
-const {handleGetRegion,region} = UseSaveRegion()
+const {handleGetRegion,region,deleteLocalRegion} = UseSaveRegion()
 
   const ChangeMode = () => {
     setNight(!night);
@@ -44,7 +44,7 @@ const {handleGetRegion,region} = UseSaveRegion()
               />
             }
           />
-           <Route path="/region" element={<RegionDetail night={night} region={region} />} />
+           <Route path="/region" element={<RegionDetail night={night} region={region} deleteLocalRegion={deleteLocalRegion} />} />
         </Routes>
       </div>
     </div>
