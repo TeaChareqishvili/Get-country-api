@@ -4,21 +4,27 @@ import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { RegionDetail } from "./components/regionDetail/RegionDetail";
 
+import { UseSaveRegion } from "./hook/UseSaveRegion";
+
 function App() {
   const [night, setNight] = useState(false);
-  const [region, getRegion] = useState ([])
+  // const [region, setRegion] = useState ([])
+
+const {handleGetRegion,region} = UseSaveRegion()
 
   const ChangeMode = () => {
     setNight(!night);
   };
 
-  const handleGetRegion = (item) => {
-    console.log("Clicked on region:", item);
-     getRegion(item)
-  };
+  // const handleGetRegion = (item) => {
+  //   // console.log("Clicked on region:", item);
+  //   setRegion(item);
+   
+  // };
 
  
-    console.log(region ," please")
+
+  
 
   return (
     <div className="App">

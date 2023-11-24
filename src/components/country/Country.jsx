@@ -14,22 +14,22 @@ const Country = ({night, handleGetRegion})=>{
       const fetchData = async () => {
         try {
           const fetchedData = await UseFetchData();
-          console.log("fetch", fetchedData);
+        //   console.log("fetch", fetchedData);
   
           if (fetchedData && fetchedData.length > 0) {
             setNewData(fetchedData);
           } else {
-            console.log("No data or empty array");
+            // console.log("No data or empty array");
           }
         } catch (error) {
-          console.error("Error fetching data:", error);
+        //   console.error("Error fetching data:", error);
         }
       };
      
       fetchData(); 
     }, []);
 
-   
+   //TODO clean up 
    
     return (
       <div className="region-wrapper">

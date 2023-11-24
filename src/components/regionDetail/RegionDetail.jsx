@@ -2,22 +2,32 @@ import "./RegionDetailStyle.scss";
 import { NavLink } from "react-router-dom";
 
 
-const RegionDetail = ({ night,region }) => {
-//   const { regionName } = useParams();
+const RegionDetail = ({ night, region }) => {
+  console.log("region-component-saved", region);
 
-//   console.log("regions", regionName);
-//   const population = regionName.match(/\d+/)[0]; // Extracts the digits
-//   const country = regionName.replace(/\d+/g, "");
-//   const languages =regionName.match(/[a-zA-Z]+/g);
 
-console.log("region-component", region)
+
+   
+
   return (
     <div className={night ? "region-wrapper-night" : "region-wrapper-day"}>
       <div className="button">
         <NavLink to="/">
           <button className="btn">Back</button>
         </NavLink>
-      
+      </div>
+      <div className="regions">
+        {region && (
+          <>
+            <div className="flags">
+              <img src={region.flag} alt="flags" />
+              <p>{region.area}</p>
+            </div>
+            <div className="region-info">
+            
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
