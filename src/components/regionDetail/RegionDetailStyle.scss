@@ -1,20 +1,71 @@
 .region-wrapper-night{
     width:100%;
+    height:100vh;
     background-color: #212e37;
     padding:30px;
     display: flex;
     flex-direction: column;
 
     .regions{
-        width:90%;
+        width:70%;
+     
         margin:30px auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
+
+        .region{
+            margin-top:30px;
+            width:90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .region-info{
+                
+                .official{
+                    font-size:1.5rem;
+                    color:#fcffff;
+                    font-family:"bold";
+                    margin-bottom:12px;
+                }
+
+                .titles{
+
+                    p{
+                        font-size:1rem;
+                        color:#e4eff1;
+                        font-family:"bold";
+                        margin:5px 0;
+
+                        .info{
+                            font-size:1rem;
+                            color:#8c99a2;
+                            font-family:"normal";
+                            margin-left:5px;
+                        }
+
+                        a{
+                            color:#8c99a2;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .flags{
+            max-width:400px;
+            width:100%;
+
+            img{
+                width:100%;
+            }
+        }
     }
    
     .button{
-        width:100%;
+      
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;
@@ -38,6 +89,9 @@
 }
 
 
+
+// light style
+
 .region-wrapper-day{
     width:100%;
     background-color: #ffffff;
@@ -46,14 +100,64 @@
     flex-direction: column;
    
     .regions{
-        width:90%;
+        width:70%;
         margin:30px auto;
         display: flex;
         align-items: center;
         justify-content: space-between;
 
+        .region{
+            margin-top:30px;
+            width:90%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .flags{
+                max-width:400px;
+                width:100%;
+    
+                img{
+                    width:100%;
+                }
+            }
+            
+
+            .region-info{
+              
+                .official{
+                    font-size:1.5rem;
+                    color:#131415;
+                    font-family:"bold";
+                    margin-bottom:12px;
+                }
+              
+                .titles{
+
+                    p{
+                        font-size:1rem;
+                        color:#3a3a3a;
+                        font-family:"bold";
+                        margin:5px 0;
+
+                        .info{
+                            font-size:1rem;
+                            color:#7d7d7d;
+                            font-family:"normal";
+                            margin-left:5px;
+                        }
+                    }
+
+                    a{
+                        color:#7d7d7d;
+                    }
+                }
+              
+            }
+        }
+
         .flags{
-            max-width:300px;
+            max-width:400px;
             width:100%;
 
             img{
@@ -63,7 +167,7 @@
     }
   
     .button{
-        width:100%;
+   
         display: flex;
         align-items: flex-start;
         justify-content: flex-start;

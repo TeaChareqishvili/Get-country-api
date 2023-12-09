@@ -9,12 +9,15 @@ const Country = ({night, handleGetRegion})=>{
 
     
     const [newdata, setNewData] = useState([]);
+   
+   
+
 
     useEffect(() => {
       const fetchData = async () => {
         try {
           const fetchedData = await UseFetchData();
-        //   console.log("fetch", fetchedData);
+        //  console.log("fetch", fetchedData);
   
           if (fetchedData && fetchedData.length > 0) {
             setNewData(fetchedData);
@@ -30,9 +33,13 @@ const Country = ({night, handleGetRegion})=>{
     }, []);
 
    //TODO clean up 
+
+
+
+ 
    
     return (
-      <div className="region-wrapper">
+      <div className="region-wrapper">  
         {newdata.map((item, index) => (
            <NavLink to="/region">
           <div key={index} className={night? "dark-region" :"light-region"} onClick={()=>handleGetRegion(item)}>  
