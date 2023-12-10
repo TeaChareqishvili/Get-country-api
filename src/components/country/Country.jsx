@@ -17,19 +17,17 @@ const Country = ({night, handleGetRegion})=>{
       const fetchData = async () => {
         try {
           const fetchedData = await UseFetchData();
-        //  console.log("fetch", fetchedData);
-  
           if (fetchedData && fetchedData.length > 0) {
             setNewData(fetchedData);
           } else {
-            // console.log("No data or empty array");
+            // Handle the case where there is no data
           }
         } catch (error) {
-        //   console.error("Error fetching data:", error);
+          console.error("Error fetching data:", error);
         }
       };
-     
-      fetchData(); 
+  
+      fetchData();
     }, []);
 
    //TODO clean up 
