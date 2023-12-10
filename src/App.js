@@ -4,11 +4,13 @@ import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { RegionDetail } from "./components/regionDetail/RegionDetail";
 
+
 import { UseSaveRegion } from "./hook/UseSaveRegion";
+import { Test } from "./components/searching/Test";
 
 function App() {
   const [night, setNight] = useState(false);
-  // const [region, setRegion] = useState ([])
+  const [result, setResult] = useState([])
 
 const {handleGetRegion,region,deleteLocalRegion} = UseSaveRegion()
 
@@ -41,10 +43,13 @@ const {handleGetRegion,region,deleteLocalRegion} = UseSaveRegion()
                 setNight={setNight}
                 ChangeMode={ChangeMode}
                 handleGetRegion={handleGetRegion}
+                result={result}
+                setResult={setResult}
               />
             }
           />
            <Route path="/region" element={<RegionDetail night={night} region={region} deleteLocalRegion={deleteLocalRegion} />} />
+           <Route path="/test" element={<Test/>}/>
         </Routes>
       </div>
     </div>

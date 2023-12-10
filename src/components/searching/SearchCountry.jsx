@@ -2,9 +2,9 @@ import "./SearchCountryStyle.scss";
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 
-
-const SearchCountry = () => {
+const SearchCountry = ({result,setResult}) => {
   const [input, setInput] = useState("");
+const [clicked,setClicked] = useState([])
 
   const fetchData = (value) => {
     const storedData = localStorage.getItem("countriesData");
@@ -23,18 +23,32 @@ const SearchCountry = () => {
             country.name.official.toLowerCase().includes(value.toLowerCase())
           );
         });
-        console.log("result", results);
+       setResult(results)
       }
     }
   };
 
+ 
   const handleChange = (value) => {
     setInput(value);
     fetchData(value);
   };
 
+  const handleClick = (item) => {
+    setClicked((prevClicked) => [...prevClicked, item]);
+    const savedDataString = localStorage.getItem('myStore') || '[]';
+    const savedData = JSON.parse(savedDataString);
+    savedData.push(item);
+    localStorage.setItem('myStore', JSON.stringify(savedData));
+    // console.log(savedData, 'localclicked');
+  };
+  
+//   console.log('clicked', clicked)
+
+ 
+
   return (
-    <div>
+    <div className="main-wrapper-input">
       <div className="input-wrapper">
         <FaSearch className="icon-search" />
         <input
@@ -44,6 +58,13 @@ const SearchCountry = () => {
           onChange={(e) => handleChange(e.target.value)}
         />
       </div>
+      {result &&
+        result.map((item, id) => (
+          <div className="options" key={id}>
+            <p onClick={()=>handleClick(item)}>{item.name.official}</p>
+            {/* <div className="border"></div> */}
+          </div>
+        ))}
     </div>
   );
 };
