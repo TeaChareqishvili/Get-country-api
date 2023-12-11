@@ -6,11 +6,12 @@ import { RegionDetail } from "./components/regionDetail/RegionDetail";
 
 
 import { UseSaveRegion } from "./hook/UseSaveRegion";
-import { Test } from "./components/searching/Test";
+
 
 function App() {
   const [night, setNight] = useState(false);
   const [result, setResult] = useState([])
+  const [clicked,setClicked] = useState([])
 
 const {handleGetRegion,region,deleteLocalRegion} = UseSaveRegion()
 
@@ -18,14 +19,16 @@ const {handleGetRegion,region,deleteLocalRegion} = UseSaveRegion()
     setNight(!night);
   };
 
-  // const handleGetRegion = (item) => {
-  //   // console.log("Clicked on region:", item);
-  //   setRegion(item);
-   
-  // };
-
+  const handleClick = (item) => {
+    setClicked((prevClicked) => [...prevClicked, item]);
+    const savedDataString = localStorage.getItem('myStore') || '[]';
+    const savedData = JSON.parse(savedDataString);
+    savedData.push(item);
+    localStorage.setItem('myStore', JSON.stringify(savedData));
+    // console.log(savedData, 'localclicked');
+  };
  
-
+  console.log('clicked', clicked)
   
 
   return (
@@ -45,11 +48,14 @@ const {handleGetRegion,region,deleteLocalRegion} = UseSaveRegion()
                 handleGetRegion={handleGetRegion}
                 result={result}
                 setResult={setResult}
+                clicked={clicked}
+                setClicked={setClicked}
+                handleClick={handleClick}
               />
             }
           />
-           <Route path="/region" element={<RegionDetail night={night} region={region} deleteLocalRegion={deleteLocalRegion} />} />
-           <Route path="/test" element={<Test/>}/>
+           <Route path="/region" element={<RegionDetail night={night} region={region} deleteLocalRegion={deleteLocalRegion} clicked={clicked} />} />
+         
         </Routes>
       </div>
     </div>

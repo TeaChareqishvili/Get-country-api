@@ -1,10 +1,11 @@
 import "./SearchCountryStyle.scss";
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
-const SearchCountry = ({result,setResult}) => {
+const SearchCountry = ({result,setResult,handleClick}) => {
   const [input, setInput] = useState("");
-const [clicked,setClicked] = useState([])
+// const [clicked,setClicked] = useState([])
 
   const fetchData = (value) => {
     const storedData = localStorage.getItem("countriesData");
@@ -34,16 +35,16 @@ const [clicked,setClicked] = useState([])
     fetchData(value);
   };
 
-  const handleClick = (item) => {
-    setClicked((prevClicked) => [...prevClicked, item]);
-    const savedDataString = localStorage.getItem('myStore') || '[]';
-    const savedData = JSON.parse(savedDataString);
-    savedData.push(item);
-    localStorage.setItem('myStore', JSON.stringify(savedData));
-    // console.log(savedData, 'localclicked');
-  };
+//   const handleClick = (item) => {
+//     setClicked((prevClicked) => [...prevClicked, item]);
+//     const savedDataString = localStorage.getItem('myStore') || '[]';
+//     const savedData = JSON.parse(savedDataString);
+//     savedData.push(item);
+//     localStorage.setItem('myStore', JSON.stringify(savedData));
+//     // console.log(savedData, 'localclicked');
+//   };
   
-//   console.log('clicked', clicked)
+  
 
  
 
@@ -61,7 +62,8 @@ const [clicked,setClicked] = useState([])
       {result &&
         result.map((item, id) => (
           <div className="options" key={id}>
-            <p onClick={()=>handleClick(item)}>{item.name.official}</p>
+            <NavLink to="/region">  <p onClick={()=>handleClick(item)}>{item.name.official}</p></NavLink>
+          
             {/* <div className="border"></div> */}
           </div>
         ))}
