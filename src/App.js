@@ -11,25 +11,15 @@ import { UseSaveRegion } from "./hook/UseSaveRegion";
 function App() {
   const [night, setNight] = useState(false);
   const [result, setResult] = useState([])
-  const [clicked,setClicked] = useState([])
+ 
 
-const {handleGetRegion,region,deleteLocalRegion} = UseSaveRegion()
+const {handleGetRegion,region,deleteLocalRegion, handleClick, clicked,setClicked} = UseSaveRegion()
 
   const ChangeMode = () => {
     setNight(!night);
   };
 
-  const handleClick = (item) => {
-    setClicked((prevClicked) => [...prevClicked, item]);
-    const savedDataString = localStorage.getItem('myStore') || '[]';
-    const savedData = JSON.parse(savedDataString);
-    savedData.push(item);
-    localStorage.setItem('myStore', JSON.stringify(savedData));
-    // console.log(savedData, 'localclicked');
-  };
- 
-  console.log('clicked', clicked)
-  
+
 
   return (
     <div className="App">

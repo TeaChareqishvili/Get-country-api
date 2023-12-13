@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 const SearchCountry = ({result,setResult,handleClick}) => {
   const [input, setInput] = useState("");
-// const [clicked,setClicked] = useState([])
+
 
   const fetchData = (value) => {
     const storedData = localStorage.getItem("countriesData");
@@ -35,18 +35,6 @@ const SearchCountry = ({result,setResult,handleClick}) => {
     fetchData(value);
   };
 
-//   const handleClick = (item) => {
-//     setClicked((prevClicked) => [...prevClicked, item]);
-//     const savedDataString = localStorage.getItem('myStore') || '[]';
-//     const savedData = JSON.parse(savedDataString);
-//     savedData.push(item);
-//     localStorage.setItem('myStore', JSON.stringify(savedData));
-//     // console.log(savedData, 'localclicked');
-//   };
-  
-  
-
- 
 
   return (
     <div className="main-wrapper-input">

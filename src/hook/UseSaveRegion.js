@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 const UseSaveRegion = ()=>{
 
+  const [clicked,setClicked] = useState([])
+
     const [region, setRegion] = useState(()=>{
 
         const storedChosenRegion = localStorage.getItem('region');
@@ -18,6 +20,9 @@ const UseSaveRegion = ()=>{
       const deleteLocalRegion = () => {
         localStorage.removeItem('region');
         setRegion([]);
+        localStorage.removeItem('muStore')
+        setClicked([])
+        console.log('delete')
        
       };
 
@@ -26,7 +31,16 @@ const UseSaveRegion = ()=>{
         
       }, [region]);
 
-      return {handleGetRegion, region,deleteLocalRegion}
+      const handleClick = (item) => {
+        setClicked((prevClicked) => [...prevClicked, item]);
+        const savedDataString = localStorage.getItem('myStore') || '[]';
+        const savedData = JSON.parse(savedDataString);
+        savedData.push(item);
+        localStorage.setItem('myStore', JSON.stringify(savedData));
+        // console.log(savedData, 'localclicked');
+      };
+
+      return {handleGetRegion, region,deleteLocalRegion, handleClick, clicked,setClicked}
 }
 
 export {UseSaveRegion}
