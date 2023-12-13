@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const UseSaveRegion = ()=>{
 
   const [clicked,setClicked] = useState([])
+  const [result, setResult] = useState([])
 
     const [region, setRegion] = useState(()=>{
 
@@ -20,9 +21,9 @@ const UseSaveRegion = ()=>{
       const deleteLocalRegion = () => {
         localStorage.removeItem('region');
         setRegion([]);
-        localStorage.removeItem('muStore')
+        localStorage.removeItem('myStore')
         setClicked([])
-        console.log('delete')
+       
        
       };
 
@@ -36,11 +37,12 @@ const UseSaveRegion = ()=>{
         const savedDataString = localStorage.getItem('myStore') || '[]';
         const savedData = JSON.parse(savedDataString);
         savedData.push(item);
-        localStorage.setItem('myStore', JSON.stringify(savedData));
-        // console.log(savedData, 'localclicked');
+        localStorage.setItem('myStore', JSON.stringify(savedData));     
+        setResult(!result)
+           
       };
 
-      return {handleGetRegion, region,deleteLocalRegion, handleClick, clicked,setClicked}
+      return {handleGetRegion, region,deleteLocalRegion, handleClick, clicked,setClicked,result,setResult}
 }
 
 export {UseSaveRegion}

@@ -3,17 +3,14 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { RegionDetail } from "./components/regionDetail/RegionDetail";
-
-
 import { UseSaveRegion } from "./hook/UseSaveRegion";
 
 
 function App() {
+  
   const [night, setNight] = useState(false);
-  const [result, setResult] = useState([])
  
-
-const {handleGetRegion,region,deleteLocalRegion, handleClick, clicked,setClicked} = UseSaveRegion()
+const {handleGetRegion,region,deleteLocalRegion, handleClick, clicked,setClicked,result,setResult} = UseSaveRegion()
 
   const ChangeMode = () => {
     setNight(!night);

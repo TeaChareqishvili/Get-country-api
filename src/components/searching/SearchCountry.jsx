@@ -33,6 +33,7 @@ const SearchCountry = ({result,setResult,handleClick}) => {
   const handleChange = (value) => {
     setInput(value);
     fetchData(value);
+   
   };
 
 
