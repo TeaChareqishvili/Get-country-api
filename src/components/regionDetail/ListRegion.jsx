@@ -1,17 +1,14 @@
 
+import "./RegionDetailStyle.scss";
 
 
+const ListRegion =({region,clicked})=>{
 
-const ListRegion =({region})=>{
+    const selectedCurrencyCode =
+    clicked.length > 0 ? Object.keys(clicked[0].currencies)[0] : null;
+  const selectAvailableLanguage =
+    clicked.length > 0 ? Object.keys(clicked[0].languages)[0] : null;
 
-    const currencyCodes = region[0].currencies || {};
-    const availableCurrencyCodes = Object.keys(currencyCodes);
-    const selectedCurrencyCode = availableCurrencyCodes[0];
-  
-    const languagesRegion = region[0].languages || {};
-    const availableLanguages = Object.keys(languagesRegion);
-    const selectAvailableLanguage = availableLanguages[0];
-    
     return(
         <div className="regions">
       { region.map((item, id) => (

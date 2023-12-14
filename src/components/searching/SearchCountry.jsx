@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const SearchCountry = ({result,setResult,handleClick}) => {
+const SearchCountry = ({result,setResult,handleClick,night}) => {
   const [input, setInput] = useState("");
 
 
@@ -38,12 +38,12 @@ const SearchCountry = ({result,setResult,handleClick}) => {
 
 
   return (
-    <div className="main-wrapper-input">
+    <div className={night ? "main-wrapper-input-night" : "main-wrapper-input"}>
       <div className="input-wrapper">
         <FaSearch className="icon-search" />
         <input
           type="text"
-          placeholder="Search Country"
+          placeholder="Search Country..."
           value={input}
           onChange={(e) => handleChange(e.target.value)}
         />
@@ -52,8 +52,6 @@ const SearchCountry = ({result,setResult,handleClick}) => {
         result.map((item, id) => (
           <div className="options" key={id}>
             <NavLink to="/region">  <p onClick={()=>handleClick(item)}>{item.name.official}</p></NavLink>
-          
-            {/* <div className="border"></div> */}
           </div>
         ))}
     </div>

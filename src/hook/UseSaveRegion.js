@@ -6,6 +6,7 @@ const UseSaveRegion = ()=>{
 
   const [clicked,setClicked] = useState([])
   const [result, setResult] = useState([])
+  const [chosenRegion, setChosenRegion] = useState ([])
 
     const [region, setRegion] = useState(()=>{
 
@@ -42,7 +43,7 @@ const UseSaveRegion = ()=>{
            
       };
 
-      return {handleGetRegion, region,deleteLocalRegion, handleClick, clicked,setClicked,result,setResult}
+      return {handleGetRegion, region,deleteLocalRegion, handleClick, clicked,setClicked,result,setResult, chosenRegion, setChosenRegion}
 }
 
 export {UseSaveRegion}

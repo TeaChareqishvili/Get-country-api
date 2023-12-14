@@ -1,17 +1,24 @@
+// light mode
+
 .main-wrapper-input{
      display: flex;
      flex-direction: column;
      align-items:flex-start;
      justify-content: flex-start;
-
+     width:300px;
+     position: absolute;
+     z-index: 2;
+     top:20px;
+  
+ 
 
     .input-wrapper{
         background-color: #ffffff;
         width:100%;
-        border-radius: 10px 10px 0 0;
+        border-radius: 5px 5px 0 0;
         height:2.5rem;
         padding:0 15px;
-        box-sizing: 0px 0px 8px #dddddd;
+        box-shadow: 0px 0px 8px #dddddd;
         display: flex;
         align-items: center;
     
@@ -36,9 +43,12 @@
      
         background-color: #ffffff;
         width:100%;
-        height:2.5rem;
-        padding:0 15px;
-        box-sizing: 0px 0px 8px #dddddd;
+        padding:8px 15px;
+        box-shadow: 0px 0px 8px #dddddd;
+        display: flex;
+        align-items: center;
+        justify-content:flex-start;
+        opacity:0.9;
       
       
 
@@ -55,3 +65,74 @@
     }
 }
 
+// night mode
+
+
+
+.main-wrapper-input-night{
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: flex-start;
+    width:300px;
+    position: absolute;
+    z-index: 2;
+    top:20px;
+    
+  
+   
+
+   .input-wrapper{
+       background-color: #2b3743;
+       width:100%;
+       border-radius: 5px 5px 0 0;
+       height:2.5rem;
+       padding:0 15px;
+       box-shadow: 0px 0px 4px #dddddd;
+       display: flex;
+       align-items: center;
+   
+       .icon-search{
+           color:#f9fbfb;
+       }
+   
+       input{
+           background-color: transparent;
+           border: none;
+           height:100%;
+           font-size:1rem;
+           font-family:"normal";
+           width:100%;
+           margin-left: 5px;
+           outline: none;
+           color:#f9fbfb;
+       }
+   }
+
+   .options{
+    
+       background-color: #2b3743;
+       width:100%;
+       padding:8px 15px;
+       box-shadow: 0px 0px 8px #dddddd;
+       display: flex;
+       align-items: center;
+       justify-content:flex-start;
+       opacity:0.9;
+     
+     
+     
+
+       p{
+           font-size:1rem;
+           font-family:"normal";
+           color:#f9fbfb;
+           cursor: pointer;
+       
+
+       }
+       p:hover{
+           color:#1f1e1e;
+       }
+   }
+}

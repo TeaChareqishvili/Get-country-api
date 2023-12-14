@@ -7,10 +7,10 @@ import { UseSaveRegion } from "./hook/UseSaveRegion";
 
 
 function App() {
-  
+
   const [night, setNight] = useState(false);
  
-const {handleGetRegion,region,deleteLocalRegion, handleClick, clicked,setClicked,result,setResult} = UseSaveRegion()
+const {handleGetRegion,region,deleteLocalRegion, handleClick, clicked,setClicked,result,setResult,chosenRegion, setChosenRegion} = UseSaveRegion()
 
   const ChangeMode = () => {
     setNight(!night);
@@ -38,6 +38,8 @@ const {handleGetRegion,region,deleteLocalRegion, handleClick, clicked,setClicked
                 clicked={clicked}
                 setClicked={setClicked}
                 handleClick={handleClick}
+                chosenRegion={chosenRegion}
+                setChosenRegion={setChosenRegion}
               />
             }
           />

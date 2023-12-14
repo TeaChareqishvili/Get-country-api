@@ -11,6 +11,8 @@ body, .App{
     height:100vh;
 }
 
+
+
 @font-face {
     font-family: "normal";
     src: url("../src/Fonts/PlayfairDisplay-Regular.ttf");
