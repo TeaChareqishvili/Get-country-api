@@ -1,12 +1,14 @@
 .region-wrapper{
-    width:90%;
+    width:95%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     margin: 30px auto;
-    height:100vh;
-
+    height:100%;
+    text-decoration: none;
+    overflow-y: scroll; 
+    overflow-x: hidden;
    
 
     .light-region{
@@ -21,7 +23,7 @@
         background-color: #ffffff;
         padding:30px 20px;
         cursor: pointer;
-        transition:  ease-in-out 1s;
+        transition:  ease-in-out 500ms;
         img{
             width:100%;
             height:150px;
@@ -61,15 +63,23 @@
     }
 }
 
+
+
+
     .region-wrapper{
-        width:90%;
+        width:95%;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
-        margin:auto;
         height:100vh;
         margin:30px auto;
+        text-decoration: none;
+        overflow-y: scroll; 
+        overflow-x: hidden;
+        
+       
+       
 
     .dark-region{
         height:370px;
@@ -83,7 +93,7 @@
         background-color: #2b3743;
         padding:30px 20px;
         cursor: pointer;
-        transition:  ease-in-out 1s;
+        transition:  ease-in-out 500ms;
 
         img{
             width:100%;
@@ -124,3 +134,15 @@
     }
 }
     
+
+
+    .region-wrapper::-webkit-scrollbar {
+        width: 0; 
+      }
+
+      .region-wrapper::-webkit-scrollbar-track {
+        background-color: #f1f1f1;
+      }
+      .region-wrapper::-webkit-scrollbar-thumb {
+        background-color: #888;
+      }

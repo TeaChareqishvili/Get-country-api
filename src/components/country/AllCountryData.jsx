@@ -2,6 +2,8 @@ import "./CountryStyle.scss";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { UseFetchData } from "../../hook/UseFetchData";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 const AllCountryData = ({night, handleGetRegion})=>{
@@ -15,7 +17,7 @@ const AllCountryData = ({night, handleGetRegion})=>{
             if (fetchedData && fetchedData.length > 0) {
               setNewData(fetchedData);
             } else {
-              // Handle the case where there is no data
+             
             }
           } catch (error) {
             console.error("Error fetching data:", error);
@@ -27,7 +29,7 @@ const AllCountryData = ({night, handleGetRegion})=>{
 
     return (
         <>
-        {newdata.map((item, index) => (
+        {newdata.length>0 ?  (newdata.map((item, index) => (
           <NavLink to="/region" key={index}>
             <div
               className={night ? "dark-region" : "light-region"}
@@ -55,7 +57,8 @@ const AllCountryData = ({night, handleGetRegion})=>{
               </p>
             </div>
           </NavLink>
-        ))}
+        ) 
+        )) : (<Skeleton count={8} height={150}/>)}
         </>
     )
 }

@@ -1,6 +1,7 @@
 import "./MainPage.scss";
-
 import { CountryLayout } from "../countryLayout/CountryLayout";
+
+
 
 const MainPage = ({
   night,
@@ -13,6 +14,7 @@ const MainPage = ({
   chosenRegion,
   setChosenRegion,
 }) => {
+  
   return (
     <div className="wrapper">
       <CountryLayout
