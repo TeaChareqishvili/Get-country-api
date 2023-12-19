@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Get-country-api/static/css/main.8dff6f27.css",
+    "main.js": "/Get-country-api/static/js/main.a525054e.js",
+    "static/media/PlayfairDisplay-Bold.ttf": "/Get-country-api/static/media/PlayfairDisplay-Bold.c3c9165182044bf7f179.ttf",
+    "static/media/PlayfairDisplay-Regular.ttf": "/Get-country-api/static/media/PlayfairDisplay-Regular.6a97b5c64f316f567fa1.ttf",
+    "static/media/PlayfairDisplay-Italic.ttf": "/Get-country-api/static/media/PlayfairDisplay-Italic.3d2a766b7526c6375825.ttf",
+    "index.html": "/Get-country-api/index.html",
+    "main.8dff6f27.css.map": "/Get-country-api/static/css/main.8dff6f27.css.map",
+    "main.a525054e.js.map": "/Get-country-api/static/js/main.a525054e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8dff6f27.css",
+    "static/js/main.a525054e.js"
+  ]
+}
