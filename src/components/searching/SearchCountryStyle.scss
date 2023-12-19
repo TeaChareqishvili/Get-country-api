@@ -9,6 +9,7 @@
      position: absolute;
      z-index: 2;
      top:20px;
+    
   
  
 
@@ -21,6 +22,7 @@
         box-shadow: 0px 0px 8px #dddddd;
         display: flex;
         align-items: center;
+       
     
         .icon-search{
             color:royalblue;
@@ -49,8 +51,7 @@
         align-items: center;
         justify-content:flex-start;
         opacity:0.9;
-      
-      
+       
 
         p{
             font-size:1rem;
@@ -135,4 +136,17 @@
            color:#1f1e1e;
        }
    }
+}
+
+
+@media(max-width:635px){
+    .main-wrapper-input{ 
+        left:50%;
+        transform: translateX(-50%);
+    }
+
+    .main-wrapper-input-night{
+        left:50%;
+        transform: translateX(-50%);
+    }
 }

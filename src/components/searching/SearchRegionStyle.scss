@@ -38,7 +38,7 @@
 
 }
 
-// noght mode
+// night mode
 
 
 .search-region-wrapper-night{
@@ -76,4 +76,15 @@
     }
   
   
+  }
+
+  @media(max-width:635px){
+    .search-region-wrapper-day{
+        display: none;
+
+    }
+
+    .search-region-wrapper-night{
+        display: none;
+    }
   }

@@ -20,7 +20,7 @@
 .country-wrapper-night{
     width:100%;
    background-color: #212e37;
-   position: relative;
+  position: relative;
    z-index: 0;
    height:100vh;
 
@@ -33,4 +33,25 @@
    margin: auto;
   
 }
+}
+
+
+@media(max-width:635px){
+    country-wrapper{
+
+        form{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    country-wrapper-night{
+
+        form{
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }
