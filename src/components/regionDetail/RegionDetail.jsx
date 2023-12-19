@@ -7,7 +7,7 @@ const RegionDetail = ({ night, region, deleteLocalRegion, clicked }) => {
   return (
     <div className={night ? "region-wrapper-night" : "region-wrapper-day"}>
       <div className="button">
-        <NavLink to="/">
+        <NavLink to="/Get-country-api">
           <button className="btn" onClick={() => deleteLocalRegion()}>
             Back
           </button>

@@ -41,7 +41,7 @@ function App() {
       </div>
       <Routes>
         <Route
-          path="/"
+          path="/Get-country-api"
           element={
             <MainPage
               night={night}
@@ -76,4 +76,4 @@ function App() {
 
 export default App;
 
-//TODO use skeleton
+
