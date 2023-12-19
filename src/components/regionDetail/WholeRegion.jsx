@@ -1,9 +1,10 @@
 import "./RegionDetailStyle.scss";
 
-const WholeRegion = ({region,clicked}) => {
-
-    const selectedCurrencyCode = region.length > 0 ? Object.keys(region[0].currencies)[0] : null;
-    const selectAvailableLanguage = region.length > 0 ? Object.keys(region[0].languages)[0] : null;
+const WholeRegion = ({ region, clicked }) => {
+  const selectedCurrencyCode =
+    region.length > 0 ? Object.keys(region[0].currencies)[0] : null;
+  const selectAvailableLanguage =
+    region.length > 0 ? Object.keys(region[0].languages)[0] : null;
 
   return (
     <>

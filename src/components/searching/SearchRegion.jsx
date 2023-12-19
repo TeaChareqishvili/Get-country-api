@@ -2,7 +2,7 @@ import "./SearchRegionStyle.scss";
 import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 
-const SearchRegion = ({ night, chosenRegion,setChosenRegion}) => {
+const SearchRegion = ({ night, chosenRegion, setChosenRegion }) => {
   const [region, setRegion] = useState("");
 
   const fetchData = (value) => {
@@ -21,7 +21,7 @@ const SearchRegion = ({ night, chosenRegion,setChosenRegion}) => {
             country.region.toLowerCase().includes(value.toLowerCase())
           );
         });
-          setChosenRegion(results)
+        setChosenRegion(results);
       }
     }
   };
@@ -44,7 +44,7 @@ const SearchRegion = ({ night, chosenRegion,setChosenRegion}) => {
           placeholder="Search Region..."
           value={region}
           onChange={(e) => handleChoose(e.target.value)}
-        />   
+        />
       </div>
     </div>
   );

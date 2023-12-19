@@ -3,9 +3,8 @@ import { FaSearch } from "react-icons/fa";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-const SearchCountry = ({result,setResult,handleClick,night}) => {
+const SearchCountry = ({ result, setResult, handleClick, night }) => {
   const [input, setInput] = useState("");
-
 
   const fetchData = (value) => {
     const storedData = localStorage.getItem("countriesData");
@@ -24,18 +23,15 @@ const SearchCountry = ({result,setResult,handleClick,night}) => {
             country.name.official.toLowerCase().includes(value.toLowerCase())
           );
         });
-       setResult(results)
+        setResult(results);
       }
     }
   };
 
- 
   const handleChange = (value) => {
     setInput(value);
     fetchData(value);
-   
   };
-
 
   return (
     <div className={night ? "main-wrapper-input-night" : "main-wrapper-input"}>
@@ -51,7 +47,10 @@ const SearchCountry = ({result,setResult,handleClick,night}) => {
       {result &&
         result.map((item, id) => (
           <div className="options" key={id}>
-            <NavLink to="/region">  <p onClick={()=>handleClick(item)}>{item.name.official}</p></NavLink>
+            <NavLink to="/region">
+              {" "}
+              <p onClick={() => handleClick(item)}>{item.name.official}</p>
+            </NavLink>
           </div>
         ))}
     </div>

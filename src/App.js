@@ -1,5 +1,5 @@
 import { MainPage } from "./components/mainPage/MainPage";
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { Header } from "./components/header/Header";
 import { RegionDetail } from "./components/regionDetail/RegionDetail";
@@ -9,12 +9,10 @@ function App() {
   const [night, setNight] = useState(false);
   const [nightMode, setNightMode] = useState(false);
 
-
   useEffect(() => {
-   
-    document.body.style.backgroundColor = nightMode ? "#212e37" : '#fafafa';
+    document.body.style.backgroundColor = nightMode ? "#212e37" : "#fafafa";
     return () => {
-      document.body.style.backgroundColor = '';
+      document.body.style.backgroundColor = "";
     };
   }, [nightMode]);
 
@@ -41,37 +39,37 @@ function App() {
       <div className={night ? "night-mode" : "main-wrapper"}>
         <Header night={night} setNight={setNight} ChangeMode={ChangeMode} />
       </div>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <MainPage
-                night={night}
-                setNight={setNight}
-                ChangeMode={ChangeMode}
-                handleGetRegion={handleGetRegion}
-                result={result}
-                setResult={setResult}
-                clicked={clicked}
-                setClicked={setClicked}
-                handleClick={handleClick}
-                chosenRegion={chosenRegion}
-                setChosenRegion={setChosenRegion}
-              />
-            }
-          />
-          <Route
-            path="/region"
-            element={
-              <RegionDetail
-                night={night}
-                region={region}
-                deleteLocalRegion={deleteLocalRegion}
-                clicked={clicked}
-              />
-            }
-          />
-        </Routes> 
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <MainPage
+              night={night}
+              setNight={setNight}
+              ChangeMode={ChangeMode}
+              handleGetRegion={handleGetRegion}
+              result={result}
+              setResult={setResult}
+              clicked={clicked}
+              setClicked={setClicked}
+              handleClick={handleClick}
+              chosenRegion={chosenRegion}
+              setChosenRegion={setChosenRegion}
+            />
+          }
+        />
+        <Route
+          path="/region"
+          element={
+            <RegionDetail
+              night={night}
+              region={region}
+              deleteLocalRegion={deleteLocalRegion}
+              clicked={clicked}
+            />
+          }
+        />
+      </Routes>
     </div>
   );
 }
@@ -79,4 +77,3 @@ function App() {
 export default App;
 
 //TODO use skeleton
-

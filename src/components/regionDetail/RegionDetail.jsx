@@ -4,8 +4,6 @@ import { NavLink } from "react-router-dom";
 import { WholeRegion } from "./WholeRegion";
 
 const RegionDetail = ({ night, region, deleteLocalRegion, clicked }) => {
- 
-
   return (
     <div className={night ? "region-wrapper-night" : "region-wrapper-day"}>
       <div className="button">

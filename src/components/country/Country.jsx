@@ -4,9 +4,6 @@ import { SearchRegion } from "./SearchRegion";
 import { AllCountryData } from "./AllCountryData";
 
 const Country = ({ night, handleGetRegion, result, chosenRegion }) => {
-
-  
-
   return (
     <div className="region-wrapper">
       {result.length > 0 ? (
@@ -22,7 +19,7 @@ const Country = ({ night, handleGetRegion, result, chosenRegion }) => {
           handleGetRegion={handleGetRegion}
         />
       ) : (
-       <AllCountryData night={night} handleGetRegion={handleGetRegion} />
+        <AllCountryData night={night} handleGetRegion={handleGetRegion} />
       )}
     </div>
   );

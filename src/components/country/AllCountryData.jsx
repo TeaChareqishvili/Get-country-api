@@ -2,34 +2,30 @@ import "./CountryStyle.scss";
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { UseFetchData } from "../../hook/UseFetchData";
-import Skeleton from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
+const AllCountryData = ({ night, handleGetRegion }) => {
+  const [newdata, setNewData] = useState([]);
 
-const AllCountryData = ({night, handleGetRegion})=>{
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const fetchedData = await UseFetchData();
+        if (fetchedData && fetchedData.length > 0) {
+          setNewData(fetchedData);
+        } else {
+        }
+      } catch (error) {}
+    };
 
-    const [newdata, setNewData] = useState([]);
+    fetchData();
+  }, []);
 
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const fetchedData = await UseFetchData();
-            if (fetchedData && fetchedData.length > 0) {
-              setNewData(fetchedData);
-            } else {
-             
-            }
-          } catch (error) {
-            console.error("Error fetching data:", error);
-          }
-        };
-    
-        fetchData();
-      }, []);
-
-    return (
-        <>
-        {newdata.length>0 ?  (newdata.map((item, index) => (
+  return (
+    <>
+      {newdata.length > 0 ? (
+        newdata.map((item, index) => (
           <NavLink to="/region" key={index}>
             <div
               className={night ? "dark-region" : "light-region"}
@@ -57,10 +53,12 @@ const AllCountryData = ({night, handleGetRegion})=>{
               </p>
             </div>
           </NavLink>
-        ) 
-        )) : (<Skeleton count={8} height={150}/>)}
-        </>
-    )
-}
+        ))
+      ) : (
+        <Skeleton count={8} height={150} />
+      )}
+    </>
+  );
+};
 
-export {AllCountryData}
+export { AllCountryData };
