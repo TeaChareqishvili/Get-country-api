@@ -1,12 +1,13 @@
 const UseFetchData = async () => {
-  const apiUrl = "https://restcountries.com/v3.1/all";
+  const apiUrl = "/api/countries";
+
   try {
     const storedData = localStorage.getItem("countriesData");
     if (storedData) {
       const jsonData = JSON.parse(storedData);
       return jsonData;
     }
-
+    console.log(storedData, "data");
     const response = await fetch(apiUrl);
     const jsonData = await response.json();
 

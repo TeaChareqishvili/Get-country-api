@@ -21,7 +21,7 @@ const AllCountryData = ({ night, handleGetRegion }) => {
 
     fetchData();
   }, []);
-
+  console.log(newdata, "newdata");
   return (
     <>
       {newdata.length > 0 ? (
